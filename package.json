@@ -1,0 +1,21 @@
+{
+    "name": "isabelle-snippets",
+    "displayName": "isabelle-snippets",
+    "description": "Snippets for Isabelle/VSCode",
+    "version": "0.0.1",
+    "publisher": "mfleury",
+    "engines": {
+        "vscode": "^1.25.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "isabelle",
+                "path": "./snippets/snippets.json"
+            }
+        ]
+    }
+}
