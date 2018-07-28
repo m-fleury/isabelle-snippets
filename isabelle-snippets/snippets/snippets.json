@@ -1,0 +1,109 @@
+{
+/*
+	// Place your snippets for Isabelle here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	"Print to console": {
+		"prefix": "log",
+		"body": [
+			"console.log('$1');",
+			"$2"
+		],
+		"description": "Log output to console"
+	}
+*/
+    // Underscore as prefix does not really work, beacuse auto-completion will tend to 
+	// find theorems names with an underscore in it.
+	//"subscript underscore": { "prefix": "_", "body": "\\<^sub>", "description": "subscript"},
+
+	"cartouche2": { "prefix": "$", "body": "\\<open>$0\\<close>", "description": "cartouches"},
+	
+	"subscript": { "prefix": "__", "body": "\\<^sub>", "description": "subscript"},
+	"superscript": { "prefix": "^^", "body": "\\<^sup>", "description": "supscript"},
+    "alpha": { "prefix": "alpha", "body": "\\<alpha>", "description": "alpha"},
+    "beta": { "prefix": "beta", "body": "\\<beta>", "description": "beta"},
+    "=>": { "prefix": "=>", "body": "\\<Rightarrow>", "description": "Type implication"},
+    "==>": { "prefix": "==>", "body": "\\<Longrightarrow>", "description": "Pure implication"},
+    "-->": { "prefix": "-->", "body": "\\<longrightarrow>", "description": "HOL implication"},
+    "==": { "prefix": "==", "body": "\\<equiv>", "description": "Pure equivalence"},
+	"<-->": { "prefix": "<-->", "body": "\\<longleftrightarrow>", "description": "HOL equivalence"},
+    "->": { "prefix": "->", "body": "\\<rightarrow>", "description": "Right arrow implication"},
+    "->a": { "prefix": "->a", "body": "\\<rightarrow>\\<^sub>a", "description": "Sepref hfref type"},
+    "->f": { "prefix": "->a", "body": "\\<rightarrow>\\<^sub>f", "description": "Sepref fref type"},
+    "<-": { "prefix": "<-", "body": "\\<leftarrow>", "description": "Left arrow"},
+    "<.": { "prefix": "<.", "body": "\\<leftarrow>", "description": "Left arrow"},
+    "<=": { "prefix": "<=", "body": "\\<le>", "description": "Less or equal"},
+    ">=": { "prefix": ">=", "body": "\\<ge>", "description": "Greater or equal"},
+
+    "~=": { "prefix": "~=", "body": "\\<noteq>", "description": "HOL inequality"},
+	"~": { "prefix": "~", "body": "\\<not>", "description": "HOL negation"},
+	"in": { "prefix": ":", "body": "\\<in> $0", "description": "in set"},
+	"in#": { "prefix": ":#", "body": "\\<in># $0", "description": "in multiset"},
+	"notiin": { "prefix": "~:", "body": "\\<notin> $0", "description": "not in set"},
+	"notin#": { "prefix": "~:#", "body": "\\<notin># $0", "description": "not in multiset"},
+	"|in|": { "prefix": "|:|", "body": "|\\<in>| $0", "description": "in fset"},
+	"|=": { "prefix": "|=", "body": "\\<Turnstile>", "description": "entailement"},
+	"(=": { "prefix": "(=", "body": "\\<subseteq>", "description": "subseteq"},
+	"HOL forall": { "prefix": "!!", "body": "\\<And>", "description": "Pure forall"},
+	"forall": { "prefix": "!", "body": "\\<forall>", "description": "HOL forall"},
+	"lambda": { "prefix": "%", "body": "\\<lambda>", "description": "lambda"},
+
+	"langle": { "prefix": "<<", "body": "\\<langle>$0\\<rangle>", "description": "langle"},
+	"rangle": { "prefix": ">", "body": "\\<rangle>$0", "description": "rangle"},
+	"noteq": { "prefix": "~=", "body": "\\<noteq> $0", "description": "noteq"},
+	"equiv": { "prefix": "==", "body": "\\<equiv> $0", "description": "Equivalence"},
+	"?": { "prefix": "?", "body": "\\<exists>", "description": "Existence"},
+	
+	"hookrightarrow": { "prefix": ".>", "body": "\\<hookrightarrow>$0", "description": "Hookrightarrow"},
+	"propto": { "prefix": ".x", "body": "\\<propto> $0", "description": "propto"},
+
+	"and": { "prefix": "&", "body": "\\<and>", "description": "logical and"},
+	"or": { "prefix": "|", "body": "\\<or>", "description": "logical or"},
+	"sledgehammer": { "prefix": "sh", "body": "sledgehammer", "description": "sledgehammer"},
+
+	"chapter": { "prefix": "chapter", "body": "chapter \\<open>$0\\<close>", "description": "chapter with cartouches"},
+	"section": { "prefix": "section", "body": "section \\<open>$0\\<close>", "description": "section with cartouches"},
+	"subsection": { "prefix": "subsec", "body": "subsection \\<open>$0\\<close>", "description": "ssubection with cartouches"},
+	"subsubsection": { "prefix": "subsubsec", "body": "subsubsection \\<open>$0\\<close>", "description": "subsubsection with cartouches"},
+	"paragraph": { "prefix": "para", "body": "paragraph \\<open>$0\\<close>", "description": "paragraph with cartouches"},
+	"text": { "prefix": "text", "body": "text \\<open>$0\\<close>", "description": "text with cartouches"},
+
+	"have": { "prefix": "have", "body": "have \\<open>$0\\<close>", "description": "have with cartouches"},
+	"hence": { "prefix": "hence", "body": "then have \\<open>$0\\<close>", "description": "hence"},
+	"thus": { "prefix": "thus", "body": "then show", "description": "thus"},
+	"lemma": { "prefix": "lemma", "body": "lemma \\<open>$0\\<close>", "description": "lemma with cartouches"},
+	"theorem": { "prefix": "theorem", "body": "theorem \\<open>$0\\<close>", "description": "theorem with cartouches"},
+	"moreover have": { "prefix": "more", "body": "moreover have \\<open>$0\\<close>", "description": "moreover have with cartouches"},
+	"ultimately have": { "prefix": "uhave", "body": "ultimately have \\<open>$0\\<close>", "description": "ultimately have with cartouches"},
+	"ultimately show": { "prefix": "ushow", "body": "ultimately show \\<open>$0\\<close>", "description": "ultimately show with cartouches"},
+	"finally have": { "prefix": "fhave", "body": "finally have \\<open>$0\\<close>", "description": "finally have with cartouches"},
+	"finally show": { "prefix": "fshow", "body": "finally show \\<open>$0\\<close>", "description": "finally show with cartouches"},
+
+	"assume": { "prefix": "assume", "body": "assume \\<open>$0\\<close>", "description": "assume with cartouches"},
+	"assumes": { "prefix": "assumes", "body": "assumes \\<open>$0\\<close>", "description": "assumes with cartouches"},
+	"show": { "prefix": "show", "body": "show \\<open>$0\\<close>", "description": "show with cartouches"},
+	"shows": { "prefix": "shows", "body": "shows \\<open>$0\\<close>", "description": "shows with cartouches"},
+	"obtain": { "prefix": "obtain", "body": "obtain $0 where \\<open>$0\\<close>", "description": "obtain with cartouches"},
+	"obtains": { "prefix": "obtains", "body": "obtains $0 where \\<open>$0\\<close>", "description": "obtains with cartouches"},
+
+
+	"cases": { "prefix": "cases", "body": "cases \\<open>$0\\<close>", "description": "cases with cartouches"},
+	"outer-and": { "prefix": "and", "body": "and \\<open>$0\\<close>", "description": "and with cartouches"},
+
+	"proof block": { "prefix": "proof", 
+	    "body": ["proof ${1: initial rule}", "\t$0", "\tshow ?thesis", "\tsorry", "qed"],
+		"description": "proof block"},
+	"definition": { "prefix": "definition", 
+	    "body": 
+	     ["definition ${1:name} ${2: :: \\<open>${4: type}\\<close>} where", 
+	       "\\<open>${1:name} ${5: args} = $0\\<close>"],
+		"description": "definition"},
+	"sepref_debug": { "prefix": "sepref_debug",
+	  "body": ["apply sepref_dbg_keep", 
+		"apply sepref_dbg_trans_keep",
+		"apply sepref_dbg_trans_step_keep",
+		"apply sepref_dbg_side_unfold apply (auto simp: )[]"],
+	  "description": "Sepref debugging tactics"}
+}
