@@ -4,6 +4,11 @@
     "description": "Snippets for Isabelle/VSCode",
     "version": "0.0.1",
     "publisher": "mfleury",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/m-fleury/isabelle-snippetst"
+    },
     "engines": {
         "vscode": "^1.25.0"
     },
