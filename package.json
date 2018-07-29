@@ -2,7 +2,7 @@
     "name": "isabelle-snippets",
     "displayName": "isabelle-snippets",
     "description": "Snippets for Isabelle/VSCode",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "mfleury",
     "license": "MIT",
     "repository": {

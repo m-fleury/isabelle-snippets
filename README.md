@@ -1,6 +1,6 @@
 # isabelle-snippets README
 
-This extensions brings some of the symbols and abbreviation used by Isabelle/jEdit to Isabelle/VSCode.
+This extensions brings some of the symbols and abbreviations completed by Isabelle/jEdit to Isabelle/VSCode.
 
 ## Features
 
@@ -8,7 +8,7 @@ TODO
 
 ## Requirements
 
-You have to install Isabelle and the prettify-symbols-mode
+You have to install Isabelle (Isabelle2018) and the prettify-symbols-mode.
 
 ## Extension Settings
 
@@ -16,9 +16,11 @@ There are currently no settings
 
 ## Known Issues
 
-+ No all abbreviation used by Isabelle/jEdit is supported.
-+ We don't support the abbreviation headers.
++ No all abbreviation used by Isabelle/jEdit are supported.
++ We don't support the abbreviation specified in the theory headers.
 
 ## Release Notes
 
-A first released is planned soon.
+### Version 0.0.1
+
+This is the very first version. It was shared by email.
