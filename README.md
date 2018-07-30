@@ -1,6 +1,6 @@
 # isabelle-snippets README
 
-This extensions brings some of the symbols and abbreviations completed by Isabelle/jEdit to Isabelle/VSCode.
+This extensions brings some of the symbols and abbreviations completion used by Isabelle/jEdit to Isabelle/VSCode.
 
 ## Features
 
@@ -8,7 +8,7 @@ TODO
 
 ## Requirements
 
-You have to install Isabelle (Isabelle2018) and the prettify-symbols-mode.
+You have to install Isabelle (Isabelle2018) and the prettify-symbols-mode. Then you can install this [extension](https://marketplace.visualstudio.com/items?itemName=mfleury.isabelle-snippets).
 
 ## Extension Settings
 
