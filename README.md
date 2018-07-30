@@ -8,7 +8,7 @@ TODO
 
 ## Requirements
 
-You have to install Isabelle (Isabelle2018) and the prettify-symbols-mode. Then you can install this [extension](https://marketplace.visualstudio.com/items?itemName=mfleury.isabelle-snippets).
+You have to install Isabelle (Isabelle2018) and the prettify-symbols-mode. Then you can install this extension from the [marketplace](https://marketplace.visualstudio.com/items?itemName=mfleury.isabelle-snippets).
 
 ## Extension Settings
 
