@@ -1,418 +1,1005 @@
 {
-    "subscript": {
-        "prefix": "__",
-        "body": "\\<^sub>",
-        "description": "subscript"
-    },
-    "superscript": {
-        "prefix": "^^",
-        "body": "\\<^sup>",
-        "description": "supscript"
-    },
-    // symbols    
-    "alpha": {
-        "prefix": "alpha",
-        "body": "\\<alpha>",
-        "description": "alpha"
-    },
-    "beta": {
-        "prefix": "beta",
-        "body": "\\<beta>",
-        "description": "beta"
-    },
-    "=>": {
-        "prefix": "=>",
-        "body": "\\<Rightarrow>",
-        "description": "Type implication"
-    },
-    "==>": {
-        "prefix": "==>",
-        "body": "\\<Longrightarrow>",
-        "description": "Pure implication"
-    },
-    "-->": {
-        "prefix": "-->",
-        "body": "\\<longrightarrow>",
-        "description": "HOL implication"
-    },
-    "==": {
-        "prefix": "==",
-        "body": "\\<equiv>",
-        "description": "Pure equivalence"
-    },
-    "<-->": {
-        "prefix": "<-->",
-        "body": "\\<longleftrightarrow>",
-        "description": "HOL equivalence"
-    },
-    "->": {
-        "prefix": "->",
-        "body": "\\<rightarrow>",
-        "description": "Right arrow implication"
-    },
-    "->a": {
-        "prefix": "->a",
-        "body": "\\<rightarrow>\\<^sub>a",
-        "description": "Sepref hfref type"
-    },
-    "->f": {
-        "prefix": "->a",
-        "body": "\\<rightarrow>\\<^sub>f",
-        "description": "Sepref fref type"
-    },
-    "<-": {
-        "prefix": "<-",
-        "body": "\\<leftarrow>",
-        "description": "Left arrow"
-    },
-    "<.": {
-        "prefix": "<.",
-        "body": "\\<leftarrow>",
-        "description": "Left arrow"
-    },
-    "<=": {
-        "prefix": "<=",
-        "body": "\\<le>",
-        "description": "Less or equal"
-    },
-    ">=": {
-        "prefix": ">=",
-        "body": "\\<ge>",
-        "description": "Greater or equal"
-    },
-    "~=": {
-        "prefix": "~=",
-        "body": "\\<noteq>",
-        "description": "HOL inequality"
-    },
-    "~": {
-        "prefix": "~",
-        "body": "\\<not>",
-        "description": "HOL negation"
-    },
-    "in": {
-        "prefix": ":",
-        "body": "\\<in> $0",
-        "description": "in set"
-    },
-    "in#": {
-        "prefix": ":#",
-        "body": "\\<in># $0",
-        "description": "in multiset"
-    },
-    "notiin": {
-        "prefix": "~:",
-        "body": "\\<notin> $0",
-        "description": "not in set"
-    },
-    "notin#": {
-        "prefix": "~:#",
-        "body": "\\<notin># $0",
-        "description": "not in multiset"
-    },
-    "|in|": {
-        "prefix": "|:|",
-        "body": "|\\<in>| $0",
-        "description": "in fset"
-    },
-    "|=": {
-        "prefix": "|=",
-        "body": "\\<Turnstile>",
-        "description": "entailement"
-    },
-    "(=": {
-        "prefix": "(=",
-        "body": "\\<subseteq>",
-        "description": "subseteq"
-    },
-    "HOL forall": {
-        "prefix": "!!",
-        "body": "\\<And>",
-        "description": "Pure forall"
-    },
-    "forall": {
-        "prefix": "!",
-        "body": "\\<forall>",
-        "description": "HOL forall"
-    },
-    "lambda": {
-        "prefix": "%",
-        "body": "\\<lambda>",
-        "description": "lambda"
-    },
-    "union": {
-        "prefix": "\\un",
-        "body": "\\<union>$0",
-        "description": "set union"
-    },
-    "Union": {
-        "prefix": "\\Un",
-        "body": "\\<Union>$0",
-        "description": "set union (big operator)"
-    },
-    "subset": {
-        "prefix": "\\subs",
-        "body": "\\<subseteq>",
-        "description": "subseteq"
-    },
-    "times": {
-        "prefix": "*",
-        "body": "\\<times>$0",
-        "description": "times"
-    },
-    "langle": {
-        "prefix": "<<",
-        "body": "\\<langle>$0\\<rangle>",
-        "description": "langle"
-    },
-    "rangle": {
-        "prefix": ">",
-        "body": "\\<rangle>$0",
-        "description": "rangle"
-    },
-    "noteq": {
-        "prefix": "~=",
-        "body": "\\<noteq> $0",
-        "description": "noteq"
-    },
-    "equiv": {
-        "prefix": "==",
-        "body": "\\<equiv> $0",
-        "description": "Equivalence"
-    },
-    "?": {
-        "prefix": "?",
-        "body": "\\<exists>",
-        "description": "Existence"
-    },
-    "hookrightarrow": {
-        "prefix": ".>",
-        "body": "\\<hookrightarrow>$0",
-        "description": "Hookrightarrow"
-    },
-    "propto": {
-        "prefix": ".x",
-        "body": "\\<propto> $0",
-        "description": "propto"
-    },
-    "rightharpoonup": {
-        "prefix": ".>",
-        "body": "\\<rightharpoonup>$0",
-        "description": "rightharpoonup"
-    },
-    "turnstile": {
-        "prefix": "|-",
-        "body": "\\<turnstile>$0",
-        "description": "turnstile"
-    },
-    "and": {
-        "prefix": "&",
-        "body": "\\<and>",
-        "description": "logical and"
-    },
-    "or": {
-        "prefix": "|",
-        "body": "\\<or>",
-        "description": "logical or"
-    },
-    "bsub": {
-        "prefix": "\\bs",
-        "body": "\\<^bsub>",
-        "description": "begin subscript"
-    },
-    "esub": {
-        "prefix": "\\es",
-        "body": "\\<^esub>",
-        "description": "end subscript"
-    },
-    "bsup": {
-        "prefix": "\\bsup",
-        "body": "\\<^bsup>",
-        "description": "begin superscript"
-    },
-    "esup": {
-        "prefix": "\\esup",
-        "body": "\\<^esup>",
-        "description": "end superscript"
-    },
-    // commands
-    "sledgehammer": {
-        "prefix": "sh",
-        "body": "sledgehammer",
-        "description": "sledgehammer"
-    },
-    // sections
-    "chapter": {
-        "prefix": "chapter",
-        "body": "chapter \\<open>$0\\<close>",
-        "description": "chapter with cartouches"
-    },
-    "section": {
-        "prefix": "section",
-        "body": "section \\<open>$0\\<close>",
-        "description": "section with cartouches"
-    },
-    "subsection": {
-        "prefix": "subsec",
-        "body": "subsection \\<open>$0\\<close>",
-        "description": "ssubection with cartouches"
-    },
-    "subsubsection": {
-        "prefix": "subsubsec",
-        "body": "subsubsection \\<open>$0\\<close>",
-        "description": "subsubsection with cartouches"
-    },
-    "paragraph": {
-        "prefix": "para",
-        "body": "paragraph \\<open>$0\\<close>",
-        "description": "paragraph with cartouches"
-    },
-    "text": {
-        "prefix": "text",
-        "body": "text \\<open>$0\\<close>",
-        "description": "text with cartouches"
-    },
-    //Isar commands
-    "cartouche2": {
-        "prefix": "$",
-        "body": "\\<open>$0\\<close>",
-        "description": "cartouches"
-    },
-    "have": {
-        "prefix": "have",
-        "body": "have \\<open>$0\\<close>",
-        "description": "have with cartouches"
-    },
-    "hence": {
-        "prefix": "hence",
-        "body": "then have \\<open>$0\\<close>",
-        "description": "hence"
-    },
-    "thus": {
-        "prefix": "thus",
-        "body": "then show",
-        "description": "thus"
-    },
-    "lemma": {
-        "prefix": "lemma",
-        "body": "lemma \\<open>$0\\<close>",
-        "description": "lemma with cartouches"
-    },
-    "theorem": {
-        "prefix": "theorem",
-        "body": "theorem \\<open>$0\\<close>",
-        "description": "theorem with cartouches"
-    },
-    "moreover have": {
-        "prefix": "more",
-        "body": "moreover have \\<open>$0\\<close>",
-        "description": "moreover have with cartouches"
-    },
-    "ultimately have": {
-        "prefix": "uhave",
-        "body": "ultimately have \\<open>$0\\<close>",
-        "description": "ultimately have with cartouches"
-    },
-    "ultimately show": {
-        "prefix": "ushow",
-        "body": "ultimately show \\<open>$0\\<close>",
-        "description": "ultimately show with cartouches"
-    },
-    "finally have": {
-        "prefix": "fhave",
-        "body": "finally have \\<open>$0\\<close>",
-        "description": "finally have with cartouches"
-    },
-    "finally show": {
-        "prefix": "fshow",
-        "body": "finally show \\<open>$0\\<close>",
-        "description": "finally show with cartouches"
-    },
-    "assume": {
-        "prefix": "assume",
-        "body": "assume \\<open>$0\\<close>",
-        "description": "assume with cartouches"
-    },
-    "assumes": {
-        "prefix": "assumes",
-        "body": "assumes \\<open>$0\\<close>",
-        "description": "assumes with cartouches"
-    },
-    "show": {
-        "prefix": "show",
-        "body": "show \\<open>$0\\<close>",
-        "description": "show with cartouches"
-    },
-    "shows": {
-        "prefix": "shows",
-        "body": "shows \\<open>$0\\<close>",
-        "description": "shows with cartouches"
-    },
-    "obtain": {
-        "prefix": "obtain",
-        "body": "obtain $0 where \\<open>$0\\<close>",
-        "description": "obtain with cartouches"
-    },
-    "obtains": {
-        "prefix": "obtains",
-        "body": "obtains $0 where \\<open>$0\\<close>",
-        "description": "obtains with cartouches"
-    },
-    "cases": {
-        "prefix": "cases",
-        "body": "cases \\<open>$0\\<close>",
-        "description": "cases with cartouches"
-    },
-    "outer-and": {
-        "prefix": "and",
-        "body": "and \\<open>$0\\<close>",
-        "description": "and with cartouches"
-    },
-    "proof block": {
-        "prefix": "proof",
-        "body": [
-            "proof ${1: initial rule}",
-            "\t$0",
-            "\tshow ?thesis",
-            "\tsorry",
-            "qed"
-        ],
-        "description": "proof block"
-    },
-    "definition": {
-        "prefix": "definition",
-        "body": [
-            "definition ${1:name} ${2: :: \\<open>${4: type}\\<close>} where",
-            "\\<open>${1:name} ${5: args} = $0\\<close>"
-        ],
-        "description": "definition"
-    },
-    // text
-    "md description": {
-        "prefix": "\\descr",
-        "body": "\\<^descr> $0",
-        "description": "markdown description"
-    },
-    "md item": {
-        "prefix": "\\item",
-        "body": "\\<^item> $0",
-        "description": "markdown item"
-    },
-    // inner syntax
-    "cancel term": {
-        "prefix": "cancel",
-        "body": "\\<^cancel>\\<open>$0\\<close>",
-        "description": "cancel comment type in inner syntax"
-    },
-    // Refinement Framework
-    "sepref_debug": {
-        "prefix": "sepref_debug",
-        "body": [
-            "apply sepref_dbg_keep",
-            "apply sepref_dbg_trans_keep",
-            "apply sepref_dbg_trans_step_keep",
-            "apply sepref_dbg_side_unfold apply (auto simp: )[]"
-        ],
-        "description": "Sepref debugging tactics"
-    }
+	//symbols (imported from $ISABELLE_SYMBOLS)"
+	"\\<lambda>": {
+		"prefix": "%",
+		"body": "\\<lambda>",
+		"description": "\\<lambda> (Isabelle/jEdit symbol)"
+	},
+	"\\<leftarrow>": {
+		"prefix": "<.",
+		"body": "\\<leftarrow>",
+		"description": "\\<leftarrow> (Isabelle/jEdit symbol)"
+	},
+	"\\<longleftarrow>": {
+		"prefix": "<.",
+		"body": "\\<longleftarrow>",
+		"description": "\\<longleftarrow> (Isabelle/jEdit symbol)"
+	},
+	"\\<longlongleftarrow>": {
+		"prefix": "<.",
+		"body": "\\<longlongleftarrow>",
+		"description": "\\<longlongleftarrow> (Isabelle/jEdit symbol)"
+	},
+	"\\<longlonglongleftarrow>": {
+		"prefix": "<.",
+		"body": "\\<longlonglongleftarrow>",
+		"description": "\\<longlonglongleftarrow> (Isabelle/jEdit symbol)"
+	},
+	"\\<rightarrow> `.>`": {
+		"prefix": ".>",
+		"body": "\\<rightarrow>",
+		"description": "\\<rightarrow> (Isabelle/jEdit symbol)"
+	},
+	"\\<rightarrow> `->`": {
+		"prefix": "->",
+		"body": "\\<rightarrow>",
+		"description": "\\<rightarrow> (Isabelle/jEdit symbol)"
+	},
+	"\\<longrightarrow> `.>`": {
+		"prefix": ".>",
+		"body": "\\<longrightarrow>",
+		"description": "\\<longrightarrow> (Isabelle/jEdit symbol)"
+	},
+	"\\<longrightarrow> `-->`": {
+		"prefix": "-->",
+		"body": "\\<longrightarrow>",
+		"description": "\\<longrightarrow> (Isabelle/jEdit symbol)"
+	},
+	"\\<longlongrightarrow> `.>`": {
+		"prefix": ".>",
+		"body": "\\<longlongrightarrow>",
+		"description": "\\<longlongrightarrow> (Isabelle/jEdit symbol)"
+	},
+	"\\<longlongrightarrow> `--->`": {
+		"prefix": "--->",
+		"body": "\\<longlongrightarrow>",
+		"description": "\\<longlongrightarrow> (Isabelle/jEdit symbol)"
+	},
+	"\\<longlonglongrightarrow>": {
+		"prefix": "--->",
+		"body": "\\<longlonglongrightarrow>",
+		"description": "\\<longlonglongrightarrow> (Isabelle/jEdit symbol)"
+	},
+	"\\<Leftarrow>": {
+		"prefix": "<.",
+		"body": "\\<Leftarrow>",
+		"description": "\\<Leftarrow> (Isabelle/jEdit symbol)"
+	},
+	"\\<Longleftarrow>": {
+		"prefix": "<.",
+		"body": "\\<Longleftarrow>",
+		"description": "\\<Longleftarrow> (Isabelle/jEdit symbol)"
+	},
+	"\\<Lleftarrow>": {
+		"prefix": "<.",
+		"body": "\\<Lleftarrow>",
+		"description": "\\<Lleftarrow> (Isabelle/jEdit symbol)"
+	},
+	"\\<Rightarrow> `.>`": {
+		"prefix": ".>",
+		"body": "\\<Rightarrow>",
+		"description": "\\<Rightarrow> (Isabelle/jEdit symbol)"
+	},
+	"\\<Rightarrow> `=>`": {
+		"prefix": "=>",
+		"body": "\\<Rightarrow>",
+		"description": "\\<Rightarrow> (Isabelle/jEdit symbol)"
+	},
+	"\\<Longrightarrow> `.>`": {
+		"prefix": ".>",
+		"body": "\\<Longrightarrow>",
+		"description": "\\<Longrightarrow> (Isabelle/jEdit symbol)"
+	},
+	"\\<Longrightarrow> `==>`": {
+		"prefix": "==>",
+		"body": "\\<Longrightarrow>",
+		"description": "\\<Longrightarrow> (Isabelle/jEdit symbol)"
+	},
+	"\\<Rrightarrow>": {
+		"prefix": ".>",
+		"body": "\\<Rrightarrow>",
+		"description": "\\<Rrightarrow> (Isabelle/jEdit symbol)"
+	},
+	"\\<leftrightarrow> `<>`": {
+		"prefix": "<>",
+		"body": "\\<leftrightarrow>",
+		"description": "\\<leftrightarrow> (Isabelle/jEdit symbol)"
+	},
+	"\\<leftrightarrow> `<->`": {
+		"prefix": "<->",
+		"body": "\\<leftrightarrow>",
+		"description": "\\<leftrightarrow> (Isabelle/jEdit symbol)"
+	},
+	"\\<longleftrightarrow> `<>`": {
+		"prefix": "<>",
+		"body": "\\<longleftrightarrow>",
+		"description": "\\<longleftrightarrow> (Isabelle/jEdit symbol)"
+	},
+	"\\<longleftrightarrow> `<->`": {
+		"prefix": "<->",
+		"body": "\\<longleftrightarrow>",
+		"description": "\\<longleftrightarrow> (Isabelle/jEdit symbol)"
+	},
+	"\\<longleftrightarrow> `<-->`": {
+		"prefix": "<-->",
+		"body": "\\<longleftrightarrow>",
+		"description": "\\<longleftrightarrow> (Isabelle/jEdit symbol)"
+	},
+	"\\<Leftrightarrow>": {
+		"prefix": "<>",
+		"body": "\\<Leftrightarrow>",
+		"description": "\\<Leftrightarrow> (Isabelle/jEdit symbol)"
+	},
+	"\\<Longleftrightarrow>": {
+		"prefix": "<>",
+		"body": "\\<Longleftrightarrow>",
+		"description": "\\<Longleftrightarrow> (Isabelle/jEdit symbol)"
+	},
+	"\\<mapsto> `.>`": {
+		"prefix": ".>",
+		"body": "\\<mapsto>",
+		"description": "\\<mapsto> (Isabelle/jEdit symbol)"
+	},
+	"\\<mapsto> `|->`": {
+		"prefix": "|->",
+		"body": "\\<mapsto>",
+		"description": "\\<mapsto> (Isabelle/jEdit symbol)"
+	},
+	"\\<longmapsto> `.>`": {
+		"prefix": ".>",
+		"body": "\\<longmapsto>",
+		"description": "\\<longmapsto> (Isabelle/jEdit symbol)"
+	},
+	"\\<longmapsto> `|-->`": {
+		"prefix": "|-->",
+		"body": "\\<longmapsto>",
+		"description": "\\<longmapsto> (Isabelle/jEdit symbol)"
+	},
+	"\\<midarrow>": {
+		"prefix": "<>",
+		"body": "\\<midarrow>",
+		"description": "\\<midarrow> (Isabelle/jEdit symbol)"
+	},
+	"\\<Midarrow>": {
+		"prefix": "<>",
+		"body": "\\<Midarrow>",
+		"description": "\\<Midarrow> (Isabelle/jEdit symbol)"
+	},
+	"\\<hookleftarrow>": {
+		"prefix": "<.",
+		"body": "\\<hookleftarrow>",
+		"description": "\\<hookleftarrow> (Isabelle/jEdit symbol)"
+	},
+	"\\<hookrightarrow>": {
+		"prefix": ".>",
+		"body": "\\<hookrightarrow>",
+		"description": "\\<hookrightarrow> (Isabelle/jEdit symbol)"
+	},
+	"\\<leftharpoondown>": {
+		"prefix": "<.",
+		"body": "\\<leftharpoondown>",
+		"description": "\\<leftharpoondown> (Isabelle/jEdit symbol)"
+	},
+	"\\<rightharpoondown>": {
+		"prefix": ".>",
+		"body": "\\<rightharpoondown>",
+		"description": "\\<rightharpoondown> (Isabelle/jEdit symbol)"
+	},
+	"\\<leftharpoonup>": {
+		"prefix": "<.",
+		"body": "\\<leftharpoonup>",
+		"description": "\\<leftharpoonup> (Isabelle/jEdit symbol)"
+	},
+	"\\<rightharpoonup>": {
+		"prefix": ".>",
+		"body": "\\<rightharpoonup>",
+		"description": "\\<rightharpoonup> (Isabelle/jEdit symbol)"
+	},
+	"\\<rightleftharpoons>": {
+		"prefix": "<> abbrev",
+		"body": "\\<rightleftharpoons>",
+		"description": "\\<rightleftharpoons> (Isabelle/jEdit symbol)"
+	},
+	"\\<leadsto>": {
+		"prefix": ".> abbrev",
+		"body": "\\<leadsto>",
+		"description": "\\<leadsto> (Isabelle/jEdit symbol)"
+	},
+	"\\<langle>": {
+		"prefix": "<<",
+		"body": "\\<langle>",
+		"description": "\\<langle> (Isabelle/jEdit symbol)"
+	},
+	"\\<rangle>": {
+		"prefix": ">>",
+		"body": "\\<rangle>",
+		"description": "\\<rangle> (Isabelle/jEdit symbol)"
+	},
+	"\\<lceil>": {
+		"prefix": "[.", //]
+		"body": "\\<lceil>",
+		"description": "\\<lceil> (Isabelle/jEdit symbol)"
+	},
+	"\\<rceil>": {
+		"prefix": ".]",
+		"body": "\\<rceil>",
+		"description": "\\<rceil> (Isabelle/jEdit symbol)"
+	},
+	"\\<lfloor>": {
+		"prefix": "[.", //]
+		"body": "\\<lfloor>",
+		"description": "\\<lfloor> (Isabelle/jEdit symbol)"
+	},
+	"\\<rfloor>": {
+		"prefix": ".]",
+		"body": "\\<rfloor>",
+		"description": "\\<rfloor> (Isabelle/jEdit symbol)"
+	},
+	"\\<lparr>": {
+		"prefix": "(|",
+		"body": "\\<lparr>",
+		"description": "\\<lparr> (Isabelle/jEdit symbol)"
+	},
+	"\\<rparr>": {
+		"prefix": "|)",
+		"body": "\\<rparr>",
+		"description": "\\<rparr> (Isabelle/jEdit symbol)"
+	},
+	"\\<lbrakk>": {
+		"prefix": "[|",  //]
+		"body": "\\<lbrakk>",
+		"description": "\\<lbrakk> (Isabelle/jEdit symbol)"
+	},
+	"\\<rbrakk>": {
+		"prefix": "|]",
+		"body": "\\<rbrakk>",
+		"description": "\\<rbrakk> (Isabelle/jEdit symbol)"
+	},
+	"\\<lbrace>": {
+		"prefix": "{|", //}
+		"body": "\\<lbrace>",
+		"description": "\\<lbrace> (Isabelle/jEdit symbol)"
+	},
+	"\\<rbrace>": {
+		"prefix": "|}",
+		"body": "\\<rbrace>",
+		"description": "\\<rbrace> (Isabelle/jEdit symbol)"
+	},
+	"\\<guillemotleft>": {
+		"prefix": "<<",
+		"body": "\\<guillemotleft>",
+		"description": "\\<guillemotleft> (Isabelle/jEdit symbol)"
+	},
+	"\\<guillemotright>": {
+		"prefix": ">>",
+		"body": "\\<guillemotright>",
+		"description": "\\<guillemotright> (Isabelle/jEdit symbol)"
+	},
+	"\\<and> `/\\`": {
+		"prefix": "/\\",
+		"body": "\\<and>",
+		"description": "\\<and> (Isabelle/jEdit symbol)"
+	},
+	"\\<and> `&`": {
+		"prefix": "&",
+		"body": "\\<and>",
+		"description": "\\<and> (Isabelle/jEdit symbol)"
+	},
+	"\\<And>": {
+		"prefix": "!!",
+		"body": "\\<And>",
+		"description": "\\<And> (Isabelle/jEdit symbol)"
+	},
+	"\\<or> `\\/`": {
+		"prefix": "\\/",
+		"body": "\\<or>",
+		"description": "\\<or> (Isabelle/jEdit symbol)"
+	},
+	"\\<or> `|`": {
+		"prefix": "|",
+		"body": "\\<or>",
+		"description": "\\<or> (Isabelle/jEdit symbol)"
+	},
+	"\\<Or>": {
+		"prefix": "??",
+		"body": "\\<Or>",
+		"description": "\\<Or> (Isabelle/jEdit symbol)"
+	},
+	"\\<forall> `!`": {
+		"prefix": "!",
+		"body": "\\<forall>",
+		"description": "\\<forall> (Isabelle/jEdit symbol)"
+	},
+	"\\<forall> `ALL`": {
+		"prefix": "ALL",
+		"body": "\\<forall>",
+		"description": "\\<forall> (Isabelle/jEdit symbol)"
+	},
+	"\\<exists> `?`": {
+		"prefix": "?",
+		"body": "\\<exists>",
+		"description": "\\<exists> (Isabelle/jEdit symbol)"
+	},
+	"\\<exists> `EX`": {
+		"prefix": "EX",
+		"body": "\\<exists>",
+		"description": "\\<exists> (Isabelle/jEdit symbol)"
+	},
+	"\\<nexists>": {
+		"prefix": "~?",
+		"body": "\\<nexists>",
+		"description": "\\<nexists> (Isabelle/jEdit symbol)"
+	},
+	"\\<not>": {
+		"prefix": "~",
+		"body": "\\<not>",
+		"description": "\\<not> (Isabelle/jEdit symbol)"
+	},
+	"\\<turnstile>": {
+		"prefix": "|-",
+		"body": "\\<turnstile>",
+		"description": "\\<turnstile> (Isabelle/jEdit symbol)"
+	},
+	"\\<Turnstile>": {
+		"prefix": "|=",
+		"body": "\\<Turnstile>",
+		"description": "\\<Turnstile> (Isabelle/jEdit symbol)"
+	},
+	"\\<tturnstile>": {
+		"prefix": "|-",
+		"body": "\\<tturnstile>",
+		"description": "\\<tturnstile> (Isabelle/jEdit symbol)"
+	},
+	"\\<TTurnstile>": {
+		"prefix": "|=",
+		"body": "\\<TTurnstile>",
+		"description": "\\<TTurnstile> (Isabelle/jEdit symbol)"
+	},
+	"\\<stileturn>": {
+		"prefix": "-|",
+		"body": "\\<stileturn>",
+		"description": "\\<stileturn> (Isabelle/jEdit symbol)"
+	},
+	"\\<le>": {
+		"prefix": "<=",
+		"body": "\\<le>",
+		"description": "\\<le> (Isabelle/jEdit symbol)"
+	},
+	"\\<ge>": {
+		"prefix": ">=",
+		"body": "\\<ge>",
+		"description": "\\<ge> (Isabelle/jEdit symbol)"
+	},
+	"\\<lless>": {
+		"prefix": "<<",
+		"body": "\\<lless>",
+		"description": "\\<lless> (Isabelle/jEdit symbol)"
+	},
+	"\\<ggreater>": {
+		"prefix": ">>",
+		"body": "\\<ggreater>",
+		"description": "\\<ggreater> (Isabelle/jEdit symbol)"
+	},
+	"\\<in>": {
+		"prefix": ":",
+		"body": "\\<in>",
+		"description": "\\<in> (Isabelle/jEdit symbol)"
+	},
+	"\\<notin>": {
+		"prefix": "~:",
+		"body": "\\<notin>",
+		"description": "\\<notin> (Isabelle/jEdit symbol)"
+	},
+	"\\<subseteq>": {
+		"prefix": "(=",
+		"body": "\\<subseteq>",
+		"description": "\\<subseteq> (Isabelle/jEdit symbol)"
+	},
+	"\\<supseteq>": {
+		"prefix": ")=",
+		"body": "\\<supseteq>",
+		"description": "\\<supseteq> (Isabelle/jEdit symbol)"
+	},
+	"\\<sqsubseteq>": {
+		"prefix": "[=", //]
+		"body": "\\<sqsubseteq>",
+		"description": "\\<sqsubseteq> (Isabelle/jEdit symbol)"
+	},
+	"\\<sqsupseteq>": {
+		"prefix": "]=",
+		"body": "\\<sqsupseteq>",
+		"description": "\\<sqsupseteq> (Isabelle/jEdit symbol)"
+	},
+	"\\<inter>": {
+		"prefix": "Int",
+		"body": "\\<inter>",
+		"description": "\\<inter> (Isabelle/jEdit symbol)"
+	},
+	"\\<Inter> `Inter`": {
+		"prefix": "Inter",
+		"body": "\\<Inter>",
+		"description": "\\<Inter> (Isabelle/jEdit symbol)"
+	},
+	"\\<Inter> `INT`": {
+		"prefix": "INT",
+		"body": "\\<Inter>",
+		"description": "\\<Inter> (Isabelle/jEdit symbol)"
+	},
+	"\\<union>": {
+		"prefix": "Un",
+		"body": "\\<union>",
+		"description": "\\<union> (Isabelle/jEdit symbol)"
+	},
+	"\\<Union> `Union`": {
+		"prefix": "Union",
+		"body": "\\<Union>",
+		"description": "\\<Union> (Isabelle/jEdit symbol)"
+	},
+	"\\<Union> `UN`": {
+		"prefix": "UN",
+		"body": "\\<Union>",
+		"description": "\\<Union> (Isabelle/jEdit symbol)"
+	},
+	"\\<Squnion>": {
+		"prefix": "SUP",
+		"body": "\\<Squnion>",
+		"description": "\\<Squnion> (Isabelle/jEdit symbol)"
+	},
+	"\\<Sqinter>": {
+		"prefix": "INF",
+		"body": "\\<Sqinter>",
+		"description": "\\<Sqinter> (Isabelle/jEdit symbol)"
+	},
+	"\\<noteq>": {
+		"prefix": "~=",
+		"body": "\\<noteq>",
+		"description": "\\<noteq> (Isabelle/jEdit symbol)"
+	},
+	"\\<doteq>": {
+		"prefix": ".=",
+		"body": "\\<doteq>",
+		"description": "\\<doteq> (Isabelle/jEdit symbol)"
+	},
+	"\\<equiv>": {
+		"prefix": "==",
+		"body": "\\<equiv>",
+		"description": "\\<equiv> (Isabelle/jEdit symbol)"
+	},
+	"\\<parallel>": {
+		"prefix": "||",
+		"body": "\\<parallel>",
+		"description": "\\<parallel> (Isabelle/jEdit symbol)"
+	},
+	"\\<bar>": {
+		"prefix": "||",
+		"body": "\\<bar>",
+		"description": "\\<bar> (Isabelle/jEdit symbol)"
+	},
+	"\\<times>": {
+		"prefix": "<*>",
+		"body": "\\<times>",
+		"description": "\\<times> (Isabelle/jEdit symbol)"
+	},
+	"\\<Sum>": {
+		"prefix": "SUM",
+		"body": "\\<Sum>",
+		"description": "\\<Sum> (Isabelle/jEdit symbol)"
+	},
+	"\\<Prod>": {
+		"prefix": "PROD",
+		"body": "\\<Prod>",
+		"description": "\\<Prod> (Isabelle/jEdit symbol)"
+	},
+	"\\<bind>": {
+		"prefix": ">>=",
+		"body": "\\<bind>",
+		"description": "\\<bind> (Isabelle/jEdit symbol)"
+	},
+	"\\<then>": {
+		"prefix": ">>",
+		"body": "\\<then>",
+		"description": "\\<then> (Isabelle/jEdit symbol)"
+	},
+	"\\<comment>": {
+		"prefix": "\\com",
+		"body": "\\<comment> \\<open>$0\\<close>",
+		"description": "\\<comment> (Isabelle/jEdit symbol)"
+	},
+	"\\<^cancel>": {
+		"prefix": "\\can",
+		"body": "\\<^cancel>\\<open>$0\\<close>",
+		"description": "\\<^cancel> (Isabelle/jEdit symbol)"
+	},
+	"\\<^latex>": {
+		"prefix": "\\lat",
+		"body": "\\<^latex>\\<open>$0\\<close>",
+		"description": "\\<^latex> (Isabelle/jEdit symbol)"
+	},
+	"\\<open>": {
+		"prefix": "<<",
+		"body": "\\<open>",
+		"description": "\\<open> (Isabelle/jEdit symbol)"
+	},
+	"\\<close>": {
+		"prefix": ">>",
+		"body": "\\<close>",
+		"description": "\\<close> (Isabelle/jEdit symbol)"
+	},
+	"\\<^footnote>": {
+		"prefix": "\\foo",
+		"body": "\\<^footnote>\\<open>$0\\<close>",
+		"description": "\\<^footnote> (Isabelle/jEdit symbol)"
+	},
+	"\\<^verbatim>": {
+		"prefix": "\\ver",
+		"body": "\\<^verbatim>\\<open>$0\\<close>",
+		"description": "\\<^verbatim> (Isabelle/jEdit symbol)"
+	},
+	"\\<^theory_text>": {
+		"prefix": "\\the",
+		"body": "\\<^theory_text>\\<open>$0\\<close>",
+		"description": "\\<^theory_text> (Isabelle/jEdit symbol)"
+	},
+	"\\<^emph>": {
+		"prefix": "\\emp",
+		"body": "\\<^emph>\\<open>$0\\<close>",
+		"description": "\\<^emph> (Isabelle/jEdit symbol)"
+	},
+	"\\<^bold>": {
+		"prefix": "\\bol",
+		"body": "\\<^bold>\\<open>$0\\<close>",
+		"description": "\\<^bold> (Isabelle/jEdit symbol)"
+	},
+	"\\<^bsub>": {
+		"prefix": "=_(",
+		"body": "\\<^bsub>",
+		"description": "\\<^bsub> (Isabelle/jEdit symbol)"
+	},
+	"\\<^esub>": {
+		"prefix": "=_)",
+		"body": "\\<^esub>",
+		"description": "\\<^esub> (Isabelle/jEdit symbol)"
+	},
+	"\\<^bsup>": {
+		"prefix": "=^(",
+		"body": "\\<^bsup>",
+		"description": "\\<^bsup> (Isabelle/jEdit symbol)"
+	},
+	"\\<^esup>": {
+		"prefix": "=^)",
+		"body": "\\<^esup>",
+		"description": "\\<^esup> (Isabelle/jEdit symbol)"
+	},
+	"\\<^file>": {
+		"prefix": "\\fil",
+		"body": "\\<^file>\\<open>$0\\<close>",
+		"description": "\\<^file> (Isabelle/jEdit symbol)"
+	},
+	"\\<^dir>": {
+		"prefix": "\\dir",
+		"body": "\\<^dir>\\<open>$0\\<close>",
+		"description": "\\<^dir> (Isabelle/jEdit symbol)"
+	},
+	"\\<^url>": {
+		"prefix": "\\url",
+		"body": "\\<^url>\\<open>$0\\<close>",
+		"description": "\\<^url> (Isabelle/jEdit symbol)"
+	},
+	"\\<^doc>": {
+		"prefix": "\\doc",
+		"body": "\\<^doc>\\<open>$0\\<close>",
+		"description": "\\<^doc> (Isabelle/jEdit symbol)"
+	},
+	"\\<^action>": {
+		"prefix": "\\act",
+		"body": "\\<^action>\\<open>$0\\<close>",
+		"description": "\\<^action> (Isabelle/jEdit symbol)"
+	},
+	"\\<^binding>": {
+		"prefix": "\\bin",
+		"body": "\\<^binding>\\<open>$0\\<close>",
+		"description": "\\<^binding> (Isabelle/jEdit symbol)"
+	},
+	"\\<^class>": {
+		"prefix": "\\cla",
+		"body": "\\<^class>\\<open>$0\\<close>",
+		"description": "\\<^class> (Isabelle/jEdit symbol)"
+	},
+	"\\<^class_syntax>": {
+		"prefix": "\\cla",
+		"body": "\\<^class_syntax>\\<open>$0\\<close>",
+		"description": "\\<^class_syntax> (Isabelle/jEdit symbol)"
+	},
+	"\\<^command_keyword>": {
+		"prefix": "\\com",
+		"body": "\\<^command_keyword>\\<open>$0\\<close>",
+		"description": "\\<^command_keyword> (Isabelle/jEdit symbol)"
+	},
+	"\\<^const_abbrev>": {
+		"prefix": "\\con",
+		"body": "\\<^const_abbrev>\\<open>$0\\<close>",
+		"description": "\\<^const_abbrev> (Isabelle/jEdit symbol)"
+	},
+	"\\<^const_name>": {
+		"prefix": "\\con",
+		"body": "\\<^const_name>\\<open>$0\\<close>",
+		"description": "\\<^const_name> (Isabelle/jEdit symbol)"
+	},
+	"\\<^const_syntax>": {
+		"prefix": "\\con",
+		"body": "\\<^const_syntax>\\<open>$0\\<close>",
+		"description": "\\<^const_syntax> (Isabelle/jEdit symbol)"
+	},
+	"\\<^cprop>": {
+		"prefix": "\\cpr",
+		"body": "\\<^cprop>\\<open>$0\\<close>",
+		"description": "\\<^cprop> (Isabelle/jEdit symbol)"
+	},
+	"\\<^cterm>": {
+		"prefix": "\\cte",
+		"body": "\\<^cterm>\\<open>$0\\<close>",
+		"description": "\\<^cterm> (Isabelle/jEdit symbol)"
+	},
+	"\\<^ctyp>": {
+		"prefix": "\\cty",
+		"body": "\\<^ctyp>\\<open>$0\\<close>",
+		"description": "\\<^ctyp> (Isabelle/jEdit symbol)"
+	},
+	"\\<^keyword>": {
+		"prefix": "\\key",
+		"body": "\\<^keyword>\\<open>$0\\<close>",
+		"description": "\\<^keyword> (Isabelle/jEdit symbol)"
+	},
+	"\\<^locale>": {
+		"prefix": "\\loc",
+		"body": "\\<^locale>\\<open>$0\\<close>",
+		"description": "\\<^locale> (Isabelle/jEdit symbol)"
+	},
+	"\\<^method>": {
+		"prefix": "\\met",
+		"body": "\\<^method>\\<open>$0\\<close>",
+		"description": "\\<^method> (Isabelle/jEdit symbol)"
+	},
+	"\\<^named_theorems>": {
+		"prefix": "\\nam",
+		"body": "\\<^named_theorems>\\<open>$0\\<close>",
+		"description": "\\<^named_theorems> (Isabelle/jEdit symbol)"
+	},
+	"\\<^nonterminal>": {
+		"prefix": "\\non",
+		"body": "\\<^nonterminal>\\<open>$0\\<close>",
+		"description": "\\<^nonterminal> (Isabelle/jEdit symbol)"
+	},
+	"\\<^path>": {
+		"prefix": "\\pat",
+		"body": "\\<^path>\\<open>$0\\<close>",
+		"description": "\\<^path> (Isabelle/jEdit symbol)"
+	},
+	"\\<^plugin>": {
+		"prefix": "\\plu",
+		"body": "\\<^plugin>\\<open>$0\\<close>",
+		"description": "\\<^plugin> (Isabelle/jEdit symbol)"
+	},
+	"\\<^prop>": {
+		"prefix": "\\pro",
+		"body": "\\<^prop>\\<open>$0\\<close>",
+		"description": "\\<^prop> (Isabelle/jEdit symbol)"
+	},
+	"\\<^session>": {
+		"prefix": "\\ses",
+		"body": "\\<^session>\\<open>$0\\<close>",
+		"description": "\\<^session> (Isabelle/jEdit symbol)"
+	},
+	"\\<^simproc>": {
+		"prefix": "\\sim",
+		"body": "\\<^simproc>\\<open>$0\\<close>",
+		"description": "\\<^simproc> (Isabelle/jEdit symbol)"
+	},
+	"\\<^sort>": {
+		"prefix": "\\sor",
+		"body": "\\<^sort>\\<open>$0\\<close>",
+		"description": "\\<^sort> (Isabelle/jEdit symbol)"
+	},
+	"\\<^syntax_const>": {
+		"prefix": "\\syn",
+		"body": "\\<^syntax_const>\\<open>$0\\<close>",
+		"description": "\\<^syntax_const> (Isabelle/jEdit symbol)"
+	},
+	"\\<^system_option>": {
+		"prefix": "\\sys",
+		"body": "\\<^system_option>\\<open>$0\\<close>",
+		"description": "\\<^system_option> (Isabelle/jEdit symbol)"
+	},
+	"\\<^term>": {
+		"prefix": "\\ter",
+		"body": "\\<^term>\\<open>$0\\<close>",
+		"description": "\\<^term> (Isabelle/jEdit symbol)"
+	},
+	"\\<^theory>": {
+		"prefix": "\\the",
+		"body": "\\<^theory>\\<open>$0\\<close>",
+		"description": "\\<^theory> (Isabelle/jEdit symbol)"
+	},
+	"\\<^theory_context>": {
+		"prefix": "\\the",
+		"body": "\\<^theory_context>\\<open>$0\\<close>",
+		"description": "\\<^theory_context> (Isabelle/jEdit symbol)"
+	},
+	"\\<^typ>": {
+		"prefix": "\\typ",
+		"body": "\\<^typ>\\<open>$0\\<close>",
+		"description": "\\<^typ> (Isabelle/jEdit symbol)"
+	},
+	"\\<^type_abbrev>": {
+		"prefix": "\\typ",
+		"body": "\\<^type_abbrev>\\<open>$0\\<close>",
+		"description": "\\<^type_abbrev> (Isabelle/jEdit symbol)"
+	},
+	"\\<^type_name>": {
+		"prefix": "\\typ",
+		"body": "\\<^type_name>\\<open>$0\\<close>",
+		"description": "\\<^type_name> (Isabelle/jEdit symbol)"
+	},
+	"\\<^type_syntax>": {
+		"prefix": "\\typ",
+		"body": "\\<^type_syntax>\\<open>$0\\<close>",
+		"description": "\\<^type_syntax> (Isabelle/jEdit symbol)"
+	},
+	"\\<^code>": {
+		"prefix": "\\cod",
+		"body": "\\<^code>\\<open>$0\\<close>",
+		"description": "\\<^code> (Isabelle/jEdit symbol)"
+	},
+	"\\<^computation>": {
+		"prefix": "\\com",
+		"body": "\\<^computation>\\<open>$0\\<close>",
+		"description": "\\<^computation> (Isabelle/jEdit symbol)"
+	},
+	"\\<^computation_conv>": {
+		"prefix": "\\com",
+		"body": "\\<^computation_conv>\\<open>$0\\<close>",
+		"description": "\\<^computation_conv> (Isabelle/jEdit symbol)"
+	},
+	"\\<^computation_check>": {
+		"prefix": "\\com",
+		"body": "\\<^computation_check>\\<open>$0\\<close>",
+		"description": "\\<^computation_check> (Isabelle/jEdit symbol)"
+	},
+
+
+	// extra symbols
+	"in#": {
+		"prefix": ":#",
+		"body": "\\<in># $0",
+		"description": "in multiset"
+	},
+	"notin": {
+		"prefix": "~:",
+		"body": "\\<notin> $0",
+		"description": "not in set"
+	},
+	"notin#": {
+		"prefix": "~:#",
+		"body": "\\<notin># $0",
+		"description": "not in multiset"
+	},
+	"|in|": {
+		"prefix": "|:|",
+		"body": "|\\<in>| $0",
+		"description": "in fset"
+	},
+	"dots": {
+		"prefix": "...",
+		"body": "\\<dots> $0",
+		"description": "dots"
+	},
+	"propto": {
+		"prefix": ".x",
+		"body": "\\<propto> $0",
+		"description": "propto"
+	},
+
+	//subscript superscript
+	"subscript": {
+		"prefix": "__",
+		"body": "\\<^sub>",
+		"description": "subscript"
+	},
+	"superscript": {
+		"prefix": "^^",
+		"body": "\\<^sup>",
+		"description": "supscript"
+	},
+	"full \\<^bsub>": {
+		"prefix": "=_()",
+		"body": "\\<^bsub>$0\\<^esub>",
+		"description": "\\<^bsub> with closing \\<^esub>"
+	},
+	"full \\<^bsup>": {
+		"prefix": "=^()",
+		"body": "\\<^bsup>$0\\<^esup>",
+		"description": "\\<^bsup> with closing \\<^esup>"
+	},
+
+	// commands
+	"sledgehammer": {
+		"prefix": "sh",
+		"body": "sledgehammer",
+		"description": "sledgehammer"
+	},
+	// sections
+	"chapter": {
+		"prefix": "chapter",
+		"body": "chapter \\<open>$0\\<close>",
+		"description": "chapter with cartouches"
+	},
+	"section": {
+		"prefix": "section",
+		"body": "section \\<open>$0\\<close>",
+		"description": "section with cartouches"
+	},
+	"subsection": {
+		"prefix": "subsec",
+		"body": "subsection \\<open>$0\\<close>",
+		"description": "ssubection with cartouches"
+	},
+	"subsubsection": {
+		"prefix": "subsubsec",
+		"body": "subsubsection \\<open>$0\\<close>",
+		"description": "subsubsection with cartouches"
+	},
+	"paragraph": {
+		"prefix": "para",
+		"body": "paragraph \\<open>$0\\<close>",
+		"description": "paragraph with cartouches"
+	},
+	"text": {
+		"prefix": "text",
+		"body": "text \\<open>$0\\<close>",
+		"description": "text with cartouches"
+	},
+
+	//Isar commands
+	"cartouche2": {
+		"prefix": "$",
+		"body": "\\<open>$0\\<close>",
+		"description": "cartouches"
+	},
+	"have": {
+		"prefix": "have",
+		"body": "have \\<open>$0\\<close>",
+		"description": "have with cartouches"
+	},
+	"hence": {
+		"prefix": "hence",
+		"body": "then have \\<open>$0\\<close>",
+		"description": "hence"
+	},
+	"thus": {
+		"prefix": "thus",
+		"body": "then show",
+		"description": "thus"
+	},
+	"lemma": {
+		"prefix": "lemma",
+		"body": "lemma \\<open>$0\\<close>",
+		"description": "lemma with cartouches"
+	},
+	"theorem": {
+		"prefix": "theorem",
+		"body": "theorem \\<open>$0\\<close>",
+		"description": "theorem with cartouches"
+	},
+	"moreover have": {
+		"prefix": "more",
+		"body": "moreover have \\<open>$0\\<close>",
+		"description": "moreover have with cartouches"
+	},
+	"ultimately have": {
+		"prefix": "uhave",
+		"body": "ultimately have \\<open>$0\\<close>",
+		"description": "ultimately have with cartouches"
+	},
+	"ultimately show": {
+		"prefix": "ushow",
+		"body": "ultimately show \\<open>$0\\<close>",
+		"description": "ultimately show with cartouches"
+	},
+	"finally have": {
+		"prefix": "fhave",
+		"body": "finally have \\<open>$0\\<close>",
+		"description": "finally have with cartouches"
+	},
+	"finally show": {
+		"prefix": "fshow",
+		"body": "finally show \\<open>$0\\<close>",
+		"description": "finally show with cartouches"
+	},
+	"assume": {
+		"prefix": "assume",
+		"body": "assume \\<open>$0\\<close>",
+		"description": "assume with cartouches"
+	},
+	"assumes": {
+		"prefix": "assumes",
+		"body": "assumes \\<open>$0\\<close>",
+		"description": "assumes with cartouches"
+	},
+	"show": {
+		"prefix": "show",
+		"body": "show \\<open>$0\\<close>",
+		"description": "show with cartouches"
+	},
+	"shows": {
+		"prefix": "shows",
+		"body": "shows \\<open>$0\\<close>",
+		"description": "shows with cartouches"
+	},
+	"obtain": {
+		"prefix": "obtain",
+		"body": "obtain $0 where \\<open>$0\\<close>",
+		"description": "obtain with cartouches"
+	},
+	"obtains": {
+		"prefix": "obtains",
+		"body": "obtains $0 where \\<open>$0\\<close>",
+		"description": "obtains with cartouches"
+	},
+	"cases": {
+		"prefix": "cases",
+		"body": "cases \\<open>$0\\<close>",
+		"description": "cases with cartouches"
+	},
+	"outer-and": {
+		"prefix": "and",
+		"body": "and \\<open>$0\\<close>",
+		"description": "and with cartouches"
+	},
+	"proof block": {
+		"prefix": "proof",
+		"body": [
+			"proof ${1: -}",
+			"\t$0",
+			"\tshow ?thesis",
+			"\t  sorry",
+			"qed"
+		],
+		"description": "proof block"
+	},
+	"definition": {
+		"prefix": "definition",
+		"body": [
+			"definition ${1:name} ${2: :: \\<open>${4: type}\\<close>} where",
+			"\\<open>${1:name} ${5: args} = $0\\<close>"
+		],
+		"description": "definition"
+	},
+	// text
+	"md description": {
+		"prefix": "\\descr",
+		"body": "\\<^descr> $0",
+		"description": "markdown description"
+	},
+	"md item": {
+		"prefix": "\\item",
+		"body": "\\<^item> $0",
+		"description": "markdown item"
+	},
+	// inner syntax
+	"cancel term": {
+		"prefix": "cancel",
+		"body": "\\<^cancel>\\<open>$0\\<close>",
+		"description": "cancel comment type in inner syntax"
+	},
+	// Refinement Framework
+	"sepref_debug": {
+		"prefix": "sepref_debug",
+		"body": [
+			"apply sepref_dbg_keep",
+			"apply sepref_dbg_trans_keep",
+			"apply sepref_dbg_trans_step_keep",
+			"apply sepref_dbg_side_unfold apply (auto simp: )[]"
+		],
+		"description": "Sepref debugging tactics"
+	}
 }
