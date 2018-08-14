@@ -84,11 +84,18 @@ for (@symbols)
 	foreach my $abbrev (@{$symbol{abbrev}})
 	{
 	    my $escaped_body = $symbol{symbol};
-	    $escaped_body =~ s/\\/\\\\/g;
+	    if($symbol{argument} && $symbol{argument} eq "cartouche") {
+		$escaped_body .= "\<open>$0\<close>"
+	    }
 	    my $escaped_abbrev = $abbrev;
-	    $escaped_abbrev =~ s/\\/\\\\/g;
+
 	    my $escaped_symbol = $symbol{symbol};
+
+
+	    $escaped_body =~ s/\\/\\\\/g;
+	    $escaped_abbrev =~ s/\\/\\\\/g;
 	    $escaped_symbol =~ s/\\/\\\\/g;
+
 	    my $entry = <<END
 	 "$escaped_symbol `$escaped_abbrev`": {
 	    "prefix": "$escaped_abbrev",
