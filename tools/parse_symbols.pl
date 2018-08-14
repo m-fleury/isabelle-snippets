@@ -97,6 +97,7 @@ for (@symbols)
     }
 
     if($symbol{abbrev}) {
+	my $number_of_abbrevs = @{$symbol{abbrev}};
 	foreach my $abbrev (@{$symbol{abbrev}})
 	{
 	    my $escaped_body = $symbol{symbol};
@@ -119,12 +120,13 @@ for (@symbols)
 	    $escaped_abbrev =~ s/\\/\\\\/g;
 	    $escaped_symbol =~ s/\\/\\\\/g;
 
+	    my $name = $escaped_symbol . ($number_of_abbrevs == 1 ? "" : " `$escaped_abbrev`");
 	    my $entry = <<END
-	 "$escaped_symbol `$escaped_abbrev`": {
-	    "prefix": "$escaped_abbrev",
-	    "body": "$escaped_body",
-	    "description": "$escaped_symbol (Isabelle/jEdit symbol)"
-	 },
+        "$name": {
+	   "prefix": "$escaped_abbrev",
+	   "body": "$escaped_body",
+	   "description": "$escaped_symbol (Isabelle/jEdit symbol)"
+	},
 END
 		;
 	    print $fh $entry;
