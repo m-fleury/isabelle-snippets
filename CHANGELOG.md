@@ -1,7 +1,7 @@
 # Change Log
 
 
-### Version 0.1.0
+### Version 0.2.0
 
 We know all abbreviation specified by ISABELLE_SYMBOLS file. Remark that this is done while compiling
 the extension, not on the fly.
