@@ -1,5 +1,5 @@
 {
-	//symbols (imported from $ISABELLE_SYMBOLS)"
+	//symbols (imported from $ISABELLE_SYMBOLS)
 	"\\<lambda>": {
 		"prefix": "%",
 		"body": "\\<lambda>",
