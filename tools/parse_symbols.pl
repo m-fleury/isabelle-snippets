@@ -8,12 +8,15 @@ use Getopt::Long;
 my @symbol_files;
 my $verbose = 0;
 my $out_file;
-
+my $complete_by_cartouches = 1;
+my $complete_cartouche_group = 1;
 
 GetOptions(
     "file=s@" => \@symbol_files,
     "out_file=s" => \$out_file,
     "verbose=i"=> \$verbose,
+    "complete_by_cartouches!" => \$complete_by_cartouches,
+    "complete_cartouche_group!" => \$complete_cartouche_group,
     "help" => sub {print_usage(); exit});
 
 my @symbols;
@@ -80,18 +83,38 @@ print $fh "{\n";
 for (@symbols)
 {
     my %symbol = %$_;
+    if($complete_cartouche_group &&
+       $symbol{argument} &&
+       ($symbol{argument} eq "cartouche" || $symbol{argument} eq "space_cartouche") &&
+       !$symbol{abbrev}) {
+	my $abbrev = $symbol{symbol};
+
+	#take only the 3 first letters and remove the '<' and '>'
+	$abbrev =~ s/\\<\^(.{3}).*>/\\$1/;
+	$abbrev =~ s/\\<(.{3}).*>/\\$1/;
+	my @abbrevs = ($abbrev);
+	$symbol{abbrev} = \@abbrevs
+    }
+
     if($symbol{abbrev}) {
 	foreach my $abbrev (@{$symbol{abbrev}})
 	{
 	    my $escaped_body = $symbol{symbol};
-	    if($symbol{argument} && $symbol{argument} eq "cartouche") {
-		$escaped_body .= "\<open>$0\<close>"
+	    if($complete_by_cartouches &&
+	       $symbol{argument} && $symbol{argument} eq "cartouche") {
+		$escaped_body .= "\\<open>\$0\\<close>"
+	    }
+
+	    if($complete_by_cartouches &&
+	       $symbol{argument} && $symbol{argument} eq "space_cartouche") {
+		$escaped_body .= " \\<open>\$0\\<close>"
 	    }
 	    my $escaped_abbrev = $abbrev;
 
 	    my $escaped_symbol = $symbol{symbol};
 
 
+	    # now properly escape the strings
 	    $escaped_body =~ s/\\/\\\\/g;
 	    $escaped_abbrev =~ s/\\/\\\\/g;
 	    $escaped_symbol =~ s/\\/\\\\/g;
@@ -124,8 +147,18 @@ sub print_usage()
   Usage:
        perl ./parse_symbols.pl --file=<SYMBOL_FILE> --out_file=<SNIPPET_FILE>
     where
-      - the <SYMBOL_FILE> can be found by `isabelle env | grep "ISABELLE_SYMBOLS"` (if isabelle is in your path)
+      - the <SYMBOL_FILE> can be found by
+         `isabelle env | grep "ISABELLE_SYMBOLS"` (if isabelle is in your path)
       - the <SNIPPET_FILE> is overwritten
+
+  Additional options:
+     --complete_cartouche_group (or --nocomplete_cartouche_group) decides whether
+       elements without abbreviation from the groups 'cartouche' or 'space_cartouche'
+       should be included (e.g., \ter ~> \<^term>).
+     --complete_by_cartouches (or --nocomplete_by_quotes) decides whether elements
+       from group 'cartouche' or 'space_cartouche' should be automatically completed
+       by cartouches (e.g., \ter ~> \<^term>\<open>$0\<close> where $0 is the new
+       position of the cursor).
 
   BEWARE: the SNIPPET_FILE is overwritten.
 END
