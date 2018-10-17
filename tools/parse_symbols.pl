@@ -4,12 +4,19 @@ use warnings;
 use Data::Dumper;
 use List::Flatten;
 use Getopt::Long;
+use utf8;
+
+use open qw/:std :utf8/;
+
+binmode STDOUT, ":utf8";
 
 my @symbol_files;
 my $verbose = 0;
 my $out_file;
 my $complete_by_cartouches = 1;
 my $complete_cartouche_group = 1;
+my $vscode_snippets = 0;
+my $emacs_symbols = 0;
 
 GetOptions(
     "file=s@" => \@symbol_files,
@@ -17,6 +24,8 @@ GetOptions(
     "verbose=i"=> \$verbose,
     "complete_by_cartouches!" => \$complete_by_cartouches,
     "complete_cartouche_group!" => \$complete_cartouche_group,
+    "vscode_snippets!" => \$vscode_snippets,
+    "emacs_symbols!" => \$emacs_symbols,    
     "help" => sub {print_usage(); exit});
 
 my @symbols;
@@ -78,64 +87,89 @@ foreach my $symbol_file (@symbol_files)
 open(my $fh, ">", $out_file)
     or die "Can't open < $out_file: $!";
 
-print $fh "{\n";
+if($vscode_snippets) {
+    print $fh "{\n";
+    for (@symbols)
+    {
+	my %symbol = %$_;
+	if($complete_cartouche_group &&
+	   $symbol{argument} &&
+	   ($symbol{argument} eq "cartouche" || $symbol{argument} eq "space_cartouche") &&
+	   !$symbol{abbrev}) {
+	    my $abbrev = $symbol{symbol};
 
-for (@symbols)
-{
-    my %symbol = %$_;
-    if($complete_cartouche_group &&
-       $symbol{argument} &&
-       ($symbol{argument} eq "cartouche" || $symbol{argument} eq "space_cartouche") &&
-       !$symbol{abbrev}) {
-	my $abbrev = $symbol{symbol};
-
-	#take only the 3 first letters and remove the '<' and '>'
-	$abbrev =~ s/\\<\^(.{3}).*>/\\$1/;
-	$abbrev =~ s/\\<(.{3}).*>/\\$1/;
-	my @abbrevs = ($abbrev);
-	$symbol{abbrev} = \@abbrevs
-    }
-
-    if($symbol{abbrev}) {
-	my $number_of_abbrevs = @{$symbol{abbrev}};
-	foreach my $abbrev (@{$symbol{abbrev}})
-	{
-	    my $escaped_body = $symbol{symbol};
-	    if($complete_by_cartouches &&
-	       $symbol{argument} && $symbol{argument} eq "cartouche") {
-		$escaped_body .= "\\<open>\$0\\<close>"
-	    }
-
-	    if($complete_by_cartouches &&
-	       $symbol{argument} && $symbol{argument} eq "space_cartouche") {
-		$escaped_body .= " \\<open>\$0\\<close>"
-	    }
-	    my $escaped_abbrev = $abbrev;
-
-	    my $escaped_symbol = $symbol{symbol};
-
-
-	    # now properly escape the strings
-	    $escaped_body =~ s/\\/\\\\/g;
-	    $escaped_abbrev =~ s/\\/\\\\/g;
-	    $escaped_symbol =~ s/\\/\\\\/g;
-
-	    my $name = $escaped_symbol . ($number_of_abbrevs == 1 ? "" : " `$escaped_abbrev`");
-	    my $entry = <<END
-        "$name": {
-	   "prefix": "$escaped_abbrev",
-	   "body": "$escaped_body",
-	   "description": "$escaped_symbol (Isabelle/jEdit symbol)"
-	},
-END
-		;
-	    print $fh $entry;
+	    #take only the 3 first letters and remove the '<' and '>'
+	    $abbrev =~ s/\\<\^(.{3}).*>/\\$1/;
+	    $abbrev =~ s/\\<(.{3}).*>/\\$1/;
+	    my @abbrevs = ($abbrev);
+	    $symbol{abbrev} = \@abbrevs
 	}
+
+	if($symbol{abbrev}) {
+	    my $number_of_abbrevs = @{$symbol{abbrev}};
+	    foreach my $abbrev (@{$symbol{abbrev}})
+	    {
+		my $escaped_body = $symbol{symbol};
+		if($complete_by_cartouches &&
+		   $symbol{argument} && $symbol{argument} eq "cartouche") {
+		    $escaped_body .= "\\<open>\$0\\<close>"
+		}
+
+		if($complete_by_cartouches &&
+		   $symbol{argument} && $symbol{argument} eq "space_cartouche") {
+		    $escaped_body .= " \\<open>\$0\\<close>"
+		}
+		my $escaped_abbrev = $abbrev;
+
+		my $escaped_symbol = $symbol{symbol};
+
+
+		# now properly escape the strings
+		$escaped_body =~ s/\\/\\\\/g;
+		$escaped_abbrev =~ s/\\/\\\\/g;
+		$escaped_symbol =~ s/\\/\\\\/g;
+
+		my $name = $escaped_symbol . ($number_of_abbrevs == 1 ? "" : " `$escaped_abbrev`");
+		my $entry = <<END
+"$name": {
+    "prefix": "$escaped_abbrev",
+    "body": "$escaped_body",
+    "description": "$escaped_symbol (Isabelle/jEdit symbol)"
+},
+END
+		    ;
+		print $fh $entry;
+	    }
+	}
+
     }
+    print $fh "}";
 
 }
 
-print $fh "}";
+
+if($emacs_symbols) {
+    for (@symbols)
+    {
+	my %symbol = %$_;
+	
+	my $abbrev = $symbol{symbol};
+	
+	#remove the '<' and '>'
+	$abbrev =~ s/\\<\^(.*)>/\\<$1>/;
+	$abbrev =~ s/\\<(.*)>/$1/;
+	my @abbrevs = ($abbrev);
+
+	if($symbol{code}) {
+	    my $code = pack 'U*', hex($symbol{code});
+	    print $fh "(\"$abbrev\" \"$code\")\n"
+	}
+
+    }
+}
+
+
+
 close $fh;
 
 
